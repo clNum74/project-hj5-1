@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb5aondr6hpaj"]
+
+[ext_resource type="Texture2D" uid="uid://buu5irc52032i" path="res://Assets/tilemap/tiny-town.png" id="1_5tq23"]
+[ext_resource type="Script" path="res://Components/weapon/scythe.gd" id="1_xf3o7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ay50g"]
+radius = 8.0
+
+[node name="Scythe" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_xf3o7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5tq23")
+region_enabled = true
+region_rect = Rect2(153, 170, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ay50g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

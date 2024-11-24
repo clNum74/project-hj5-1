@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bglnedf0fbg00"]
+
+[ext_resource type="Script" path="res://Components/spawner/spawner.gd" id="1_6jnrs"]
+[ext_resource type="Texture2D" uid="uid://buu5irc52032i" path="res://Assets/tilemap/tiny-town.png" id="1_kuash"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7e5p"]
+size = Vector2(32, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_df3d6"]
+size = Vector2(126, 102)
+
+[node name="Spawner" type="Area2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+script = ExtResource("1_6jnrs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_kuash")
+region_enabled = true
+region_rect = Rect2(85, 33, 17, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_v7e5p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="SpawnArea" type="Area2D" parent="."]
+
+[node name="SpawnShape" type="CollisionShape2D" parent="SpawnArea"]
+shape = SubResource("RectangleShape2D_df3d6")
+debug_color = Color(0.996291, 0, 0.189569, 0.42)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

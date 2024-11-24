@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://db7g1y6myk6yb"]
+
+[ext_resource type="Script" path="res://Components/ui/canvas_layer.gd" id="1_23axh"]
+[ext_resource type="Texture2D" uid="uid://bdrjy166xjwl7" path="res://Assets/tilemap/tiny-battle.png" id="2_s53g8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8vct"]
+atlas = ExtResource("2_s53g8")
+region = Rect2(255, 170, 16, 16)
+
+[node name="UI_Canvas" type="CanvasLayer"]
+script = ExtResource("1_23axh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 28.0
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_n8vct")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="HealthLabel" type="Label" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+text = "3"

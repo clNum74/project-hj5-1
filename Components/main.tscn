@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmfvtk7xgpnul"]
+
+[ext_resource type="PackedScene" uid="uid://bvrya4cg2t2ol" path="res://Components/player/player.tscn" id="1_omhjw"]
+[ext_resource type="Script" path="res://Components/main.gd" id="1_p4wyh"]
+[ext_resource type="PackedScene" uid="uid://ca2ms1e4spx3p" path="res://Components/map/map_test.tscn" id="2_dn28m"]
+[ext_resource type="PackedScene" uid="uid://db7g1y6myk6yb" path="res://Components/ui/ui_canvas.tscn" id="2_lt12l"]
+[ext_resource type="PackedScene" uid="uid://bglnedf0fbg00" path="res://Components/spawner/spawner.tscn" id="4_apc2b"]
+[ext_resource type="PackedScene" uid="uid://dvhx81m387kwr" path="res://Components/enemy/enemy_wizard.tscn" id="6_237hu"]
+[ext_resource type="PackedScene" uid="uid://duvldmogbqfcg" path="res://Components/enemy/rat.tscn" id="7_720tc"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_p4wyh")
+
+[node name="UI_Canvas" parent="." instance=ExtResource("2_lt12l")]
+
+[node name="Map-Test" parent="." instance=ExtResource("2_dn28m")]
+
+[node name="Player" parent="." instance=ExtResource("1_omhjw")]
+position = Vector2(175, 179)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-88, -64)
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="Spawner" parent="." instance=ExtResource("4_apc2b")]
+position = Vector2(549, 380)
+
+[node name="Enemy_Wizard" parent="." instance=ExtResource("6_237hu")]
+position = Vector2(540, 135)
+
+[node name="Enemy_Rat" parent="." instance=ExtResource("7_720tc")]
+position = Vector2(328, 374)

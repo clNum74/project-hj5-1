@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bmcygdnvvltmn"]
+
+[ext_resource type="Texture2D" uid="uid://bdrjy166xjwl7" path="res://Assets/tilemap/tiny-battle.png" id="1_6762p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ngc1"]
+atlas = ExtResource("1_6762p")
+region = Rect2(255, 170, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ngc1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
