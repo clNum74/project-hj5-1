@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvrya4cg2t2ol"]
+[gd_scene load_steps=11 format=3 uid="uid://bvrya4cg2t2ol"]
 
 [ext_resource type="Script" path="res://Components/player/player.gd" id="1_0vofw"]
 [ext_resource type="Texture2D" uid="uid://d2vww743wc0ll" path="res://Assets/Moona.png" id="2_kdm73"]
 [ext_resource type="Script" path="res://Components/player/health.gd" id="3_5aj4b"]
+[ext_resource type="PackedScene" uid="uid://bnlotfxytav8d" path="res://Components/weapon/sword.tscn" id="4_koekn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0njpa"]
 size = Vector2(10, 14)
@@ -182,15 +183,22 @@ libraries = {
 "": SubResource("AnimationLibrary_vwhdy")
 }
 
-[node name="KnifePoint" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(9, -2)
-
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_5aj4b")
+
+[node name="KnifePoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(9, -2)
+
+[node name="SwordMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(5, 0)
+
+[node name="Sword" parent="." instance=ExtResource("4_koekn")]
+position = Vector2(-12, -9)
 
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

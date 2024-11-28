@@ -11,6 +11,7 @@ signal update_health
 @onready var sprite2d = $Sprite2D
 @onready var attackCooldown = $AttackCooldown
 @onready var animation_player = %AnimationPlayer
+@onready var sword = $Sword
 
 @export var speed := 160
 @export var slow_effect := 0
@@ -78,6 +79,10 @@ func set_attack_state(new_state: int) -> void:
 	elif previous_state == Attack_States.ATTACKING:
 		if attack_state == Attack_States.FREE:
 			slow_effect = 0
+
+func sword_attack():
+	sword.global_position = %SwordMarker.global_position
+	sword.play_attack_sword_animation()
 
 func throw_knife():
 	const KNIFE = preload("res://Components/weapon/knife.tscn")
