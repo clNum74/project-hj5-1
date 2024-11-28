@@ -110,7 +110,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ijdjb"]
-radius = 66.5075
+radius = 38.0526
 
 [node name="Enemy_Rat" type="CharacterBody2D"]
 scale = Vector2(2, 2)

@@ -87,7 +87,7 @@ func throw_knife():
 	if sprite2d.flip_h == false:
 		new_knife.global_position
 	else:
-		new_knife.global_position = Vector2(%KnifePoint.global_position.x - (%KnifePoint.position.x * 2), %KnifePoint.global_position.y)
+		new_knife.global_position = Vector2(%KnifePoint.global_position.x - (%KnifePoint.position.x * 2 * self.scale.x), %KnifePoint.global_position.y)
 		new_knife.rotate(135.1)
 	new_knife.play_throw_knife_animation()
 

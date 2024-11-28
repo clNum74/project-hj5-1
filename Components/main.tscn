@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://db7g1y6myk6yb" path="res://Components/ui/ui_canvas.tscn" id="2_lt12l"]
 [ext_resource type="PackedScene" uid="uid://bglnedf0fbg00" path="res://Components/spawner/spawner.tscn" id="4_apc2b"]
 [ext_resource type="PackedScene" uid="uid://dvhx81m387kwr" path="res://Components/enemy/enemy_wizard.tscn" id="6_237hu"]
-[ext_resource type="PackedScene" uid="uid://duvldmogbqfcg" path="res://Components/enemy/rat.tscn" id="7_720tc"]
+[ext_resource type="PackedScene" uid="uid://duvldmogbqfcg" path="res://Components/enemy/rat.tscn" id="7_1bu16"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_p4wyh")
@@ -29,5 +29,5 @@ position = Vector2(549, 380)
 [node name="Enemy_Wizard" parent="." instance=ExtResource("6_237hu")]
 position = Vector2(540, 135)
 
-[node name="Enemy_Rat" parent="." instance=ExtResource("7_720tc")]
-position = Vector2(328, 374)
+[node name="Enemy_Rat" parent="." instance=ExtResource("7_1bu16")]
+position = Vector2(243, 422)
